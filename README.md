@@ -1,87 +1,164 @@
-# Testing and Debugging MERN Applications
+MERN Testing and Debugging – Assignment
 
-This assignment focuses on implementing comprehensive testing strategies for a MERN stack application, including unit testing, integration testing, and end-to-end testing, along with debugging techniques.
+This project demonstrates testing and debugging techniques in a MERN (MongoDB, Express, React, Node.js) application. The goal of the assignment is to implement different types of tests—unit tests, integration tests, and end-to-end tests—while applying debugging strategies to ensure reliability of both the client and server.
 
-## Assignment Overview
 
-You will:
-1. Set up testing environments for both client and server
-2. Write unit tests for React components and server functions
-3. Implement integration tests for API endpoints
-4. Create end-to-end tests for critical user flows
-5. Apply debugging techniques for common MERN stack issues
+📌 Project Structure
 
-## Project Structure
-
-```
 mern-testing/
-├── client/                 # React front-end
-│   ├── src/                # React source code
-│   │   ├── components/     # React components
-│   │   ├── tests/          # Client-side tests
-│   │   │   ├── unit/       # Unit tests
-│   │   │   └── integration/ # Integration tests
-│   │   └── App.jsx         # Main application component
-│   └── cypress/            # End-to-end tests
-├── server/                 # Express.js back-end
-│   ├── src/                # Server source code
-│   │   ├── controllers/    # Route controllers
-│   │   ├── models/         # Mongoose models
-│   │   ├── routes/         # API routes
-│   │   └── middleware/     # Custom middleware
-│   └── tests/              # Server-side tests
-│       ├── unit/           # Unit tests
-│       └── integration/    # Integration tests
-├── jest.config.js          # Jest configuration
-└── package.json            # Project dependencies
-```
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── tests/
+│   │   │   ├── unit/
+│   │   │   └── integration/
+│   │   └── App.jsx
+│   └── cypress/            
+├── server/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── middleware/
+│   └── tests/
+│       ├── unit/
+│       └── integration/
+├── jest.config.js
+└── package.json
 
-## Getting Started
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week6-Assignment.md` file
-4. Explore the starter code and existing tests
-5. Complete the tasks outlined in the assignment
+🚀 Getting Started
+Requirements
 
-## Files Included
+Node.js v18+
 
-- `Week6-Assignment.md`: Detailed assignment instructions
-- Starter code for a MERN application with basic test setup:
-  - Sample React components with test files
-  - Express routes with test files
-  - Jest and testing library configurations
-  - Example tests for reference
+MongoDB (local or Atlas)
 
-## Requirements
+npm 
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Basic understanding of testing concepts
+Installation
+git clone <https://github.com/PLP-MERN-Stack-Development/testing-and-debugging-ensuring-mern-app-reliability-Cynthia-tech48.git>
+cd server
+npm install
 
-## Testing Tools
 
-- Jest: JavaScript testing framework
-- React Testing Library: Testing utilities for React
-- Supertest: HTTP assertions for API testing
-- Cypress/Playwright: End-to-end testing framework
-- MongoDB Memory Server: In-memory MongoDB for testing
+Running the Server
+npm run dev
 
-## Submission
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+🧪 Testing Strategy
 
-1. Complete all required tests (unit, integration, and end-to-end)
-2. Achieve at least 70% code coverage for unit tests
-3. Document your testing strategy in the README.md
-4. Include screenshots of your test coverage reports
-5. Demonstrate debugging techniques in your code
+This project implements three levels of testing:
 
-## Resources
 
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
-- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
-- [Supertest Documentation](https://github.com/visionmedia/supertest)
-- [Cypress Documentation](https://docs.cypress.io/)
-- [MongoDB Testing Best Practices](https://www.mongodb.com/blog/post/mongodb-testing-best-practices) 
+✔ 1. Unit Testing
+
+Tests small isolated functions such as helpers, middleware, and validation logic.
+
+
+Tools: Jest
+
+✔ 2. Integration Testing
+
+Tests interaction between routes, controllers, and the database.
+
+Tools: Supertest, MongoDB Memory Server
+
+Example endpoints tested:
+
+POST /api/users/register
+
+POST /api/users/login
+
+POST /api/posts
+
+GET /api/posts
+
+✔ 3. End-to-End (E2E) Testing
+
+Simulates real browser behavior and user actions.
+
+
+Tools: Cypress
+
+Example test: verifying page loads and UI elements.
+
+
+🧵 Debugging Techniques Used
+
+Console-based debugging throughout the backend to trace request flow.
+
+Error-handling middleware added for consistent API error responses.
+
+Environment variables used for controlling test and development environments.
+
+Isolated test database using MongoDB Memory Server.
+
+Validation checks added to catch malformed data early.
+
+📊 Test Coverage
+
+Unit testing and integration testing have been implemented.
+
+Coverage improvement is ongoing .
+
+Coverage reports can be viewed using:
+
+npm run test -- --coverage
+
+
+🛠 Tools Used
+
+Jest – Unit testing
+
+Supertest – API testing
+
+React Testing Library – Component testing
+
+Cypress – End-to-end testing
+
+MongoDB Memory Server – Fast in-memory test database
+
+
+📘 Assignment Focus
+
+This submission demonstrates:
+
+Understanding of MERN application testing
+
+Implementation of backend unit & integration tests
+
+Setup of frontend testing environment
+
+Basic Cypress end-to-end testing
+
+Debugging and troubleshooting server issues
+
+Use of testing best practices
+
+
+📸 Screenshots
+
+Below are the main UI pages of the application.
+All screenshots are stored in the photos/ folder.
+
+🏠 Home Page
+
+This is the landing page where users can view posts and navigate through the application.
+
+![Home Page](./photos/home1.jpg)
+
+
+
+ Create Post Page
+
+This is the page where authenticated users can create new posts.
+
+![Create Post Page](./photos/create post1.jpg)
+
+📎 Additional Notes
+
+Some tests are still in progress as part of ongoing improvements.
+
+All required testing environments have been set up successfully.
+
